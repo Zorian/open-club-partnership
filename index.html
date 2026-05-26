@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open Club — Partnership Proposal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E2A21;--paper:#F4EFE4;--paper-2:#EBE3D2;
+    --accent:#BFF24A;--gold:#CBA24A;--moss:#1B4435;
+    --line:rgba(14,42,33,.14);--line-light:rgba(244,239,228,.16);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:'Archivo',sans-serif;font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;line-height:1.05;letter-spacing:-.02em}
+  .grain{position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+  .hero{position:relative;background:var(--ink);color:var(--paper);padding:64px 0 64px;overflow:hidden}
+  .hero::before{content:"";position:absolute;top:-30%;right:-15%;width:55vw;height:55vw;background:radial-gradient(circle,rgba(191,242,74,.16),transparent 60%)}
+  .hero .wrap{position:relative;z-index:2}
+  .badge{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line-light);border-radius:100px;padding:7px 15px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--accent);margin-bottom:26px}
+  .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent)}
+  .hero h1{font-size:clamp(2.8rem,6.5vw,5rem);font-weight:500;letter-spacing:-.035em}
+  .hero h1 em{font-style:italic;color:var(--accent)}
+  .hero-meta{display:flex;gap:40px;margin-top:42px;padding-top:26px;border-top:1px solid var(--line-light);flex-wrap:wrap}
+  .hero-meta div span{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,239,228,.45);font-weight:600;margin-bottom:5px}
+  .hero-meta div strong{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:500;color:var(--paper)}
+
+  section{padding:64px 0}
+  .eyebrow{display:flex;align-items:center;gap:13px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--moss);margin-bottom:26px}
+  .eyebrow::before{content:"";width:32px;height:2px;background:var(--gold)}
+  h2.big{font-size:clamp(1.8rem,4vw,2.7rem);font-weight:500;max-width:22ch}
+
+  /* three parts */
+  .three{background:var(--ink);color:var(--paper)}
+  .three .eyebrow{color:var(--accent)}.three .eyebrow::before{background:var(--accent)}
+  .parts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .part{border:1px solid var(--line-light);border-radius:16px;padding:28px;background:rgba(255,255,255,.02)}
+  .part .pn{font-family:'Fraunces',serif;font-size:2.1rem;font-weight:300;color:var(--gold);line-height:.8;margin-bottom:14px}
+  .part h3{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:500;color:var(--accent);margin-bottom:8px}
+  .part p{font-size:.95rem;color:rgba(244,239,228,.74)}
+
+  /* role pills */
+  .roles{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .role{background:var(--paper-2);border:1px solid var(--line);border-radius:14px;padding:22px 24px;display:flex;gap:16px;align-items:flex-start}
+  .role .ri{flex:0 0 auto;font-family:'Fraunces',serif;font-weight:700;color:var(--gold);font-size:1.1rem}
+  .role h3{font-size:1.12rem;font-weight:600;margin-bottom:3px}
+  .role p{font-size:.92rem;color:rgba(14,42,33,.7)}
+  .role.full{grid-column:1/-1;background:var(--moss);color:var(--paper)}
+  .role.full .ri{color:var(--accent)}.role.full h3{color:var(--paper)}.role.full p{color:rgba(244,239,228,.8)}
+
+  /* operating - included split */
+  .op{background:var(--paper-2)}
+  .incl{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:6px}
+  .incl-col{border-radius:16px;padding:28px}
+  .incl-col.in{background:var(--ink);color:var(--paper)}
+  .incl-col.out{background:var(--paper);border:1px solid var(--line)}
+  .incl-col h4{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:600;margin-bottom:14px}
+  .incl-col.in h4{color:var(--accent)}.incl-col.out h4{color:var(--gold)}
+  .incl-col ul{list-style:none;display:grid;gap:8px}
+  .incl-col li{font-size:.95rem;padding-left:22px;position:relative}
+  .incl-col.in li{color:rgba(244,239,228,.82)}.incl-col.out li{color:rgba(14,42,33,.74)}
+  .incl-col.in li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:700}
+  .incl-col.out li::before{content:"→";position:absolute;left:0;color:var(--gold);font-weight:700}
+  .test{background:var(--moss);color:var(--paper);border-radius:12px;padding:20px 26px;margin-top:18px;font-family:'Fraunces',serif;font-size:1.15rem;font-weight:500;text-align:center}
+  .test b{color:var(--accent)}
+
+  /* build table */
+  .btable{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--paper)}
+  .brow{display:grid;grid-template-columns:1.2fr 2.2fr auto;gap:18px;padding:15px 24px;border-bottom:1px solid var(--line);align-items:center}
+  .brow:last-child{border-bottom:none}
+  .brow.head{background:var(--moss);color:var(--paper)}
+  .brow.head span{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+  .brow .ph{font-family:'Fraunces',serif;font-size:1.02rem;font-weight:600}
+  .brow .de{font-size:.9rem;color:rgba(14,42,33,.66)}
+  .brow .hr{font-family:'Fraunces',serif;font-weight:600;color:var(--gold);white-space:nowrap;text-align:right}
+  .brow.total{background:var(--paper-2)}
+  .brow.total .ph,.brow.total .hr{font-size:1.1rem}
+  .price-reveal{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:16px}
+  .pr{padding:24px;background:var(--paper);text-align:center}
+  .pr .l{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:rgba(14,42,33,.5);margin-bottom:8px}
+  .pr .v{font-family:'Fraunces',serif;font-size:1.7rem;font-weight:600}
+  .pr.scope .v{color:var(--moss);font-size:1.3rem}
+  .pr.std .v{color:rgba(14,42,33,.45);text-decoration:line-through}
+  .pr.partner{background:var(--ink)}.pr.partner .l{color:var(--accent)}.pr.partner .v{color:var(--accent)}
+
+  /* tiers */
+  .tiers{background:var(--ink);color:var(--paper)}
+  .tiers .eyebrow{color:var(--accent)}.tiers .eyebrow::before{background:var(--accent)}
+  .tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .tier{border:1px solid var(--line-light);border-radius:18px;padding:30px 26px;background:rgba(255,255,255,.02);position:relative}
+  .tier.rec{background:var(--moss);border:1px solid var(--accent)}
+  .tier .ribbon{position:absolute;top:-1px;right:22px;background:var(--accent);color:var(--ink);font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:5px 13px;border-radius:0 0 8px 8px}
+  .tier .tname{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:14px}
+  .tier .eq{font-family:'Fraunces',serif;font-size:3rem;font-weight:500;color:var(--accent);line-height:.9}
+  .tier .eq span{font-size:1.1rem;color:rgba(244,239,228,.6)}
+  .tier .eqd{font-size:.85rem;color:rgba(244,239,228,.6);margin:5px 0 22px}
+  .tier .trow{display:flex;justify-content:space-between;padding:13px 0;border-top:1px solid var(--line-light);font-size:.95rem}
+  .tier .trow .k{color:rgba(244,239,228,.7)}
+  .tier .trow .vv{font-family:'Fraunces',serif;font-weight:600;color:var(--paper)}
+  .tier.rec .trow .vv{color:var(--accent)}
+  .logic{display:flex;gap:16px;align-items:center;margin-top:24px;padding:22px 26px;border:1px solid var(--line-light);border-radius:14px;background:rgba(255,255,255,.02);flex-wrap:wrap}
+  .logic .li{flex:0 0 auto;width:40px;height:40px;border-radius:11px;background:var(--moss);color:var(--accent);display:grid;place-items:center;font-size:1.3rem}
+  .logic p{flex:1;min-width:260px;font-size:1rem;color:rgba(244,239,228,.78)}
+  .logic b{color:var(--accent)}
+
+  /* close */
+  .close{background:var(--accent);color:var(--ink);text-align:center}
+  .close h2{font-size:clamp(1.8rem,4.5vw,3rem);font-weight:500;max-width:20ch;margin:0 auto}
+  .close .vest{background:rgba(14,42,33,.06);border:1px solid rgba(14,42,33,.16);border-radius:14px;padding:20px 28px;margin-top:30px;max-width:64ch;margin-left:auto;margin-right:auto;font-size:.98rem;color:rgba(14,42,33,.78)}
+
+  footer{background:var(--ink);color:rgba(244,239,228,.5);padding:30px 0;font-size:.85rem}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  footer b{color:var(--accent);font-family:'Fraunces',serif;font-weight:600}
+
+  @media(max-width:920px){
+    .parts,.roles,.incl,.tier-grid,.price-reveal{grid-template-columns:1fr}
+    .brow{grid-template-columns:1fr;gap:5px}.brow .hr{text-align:left}.brow.head{display:none}
+    section{padding:48px 0}
+  }
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="badge"><span class="dot"></span>Partnership Proposal · Private &amp; Confidential</span>
+    <h1>Open Club <em>×</em> Zorian</h1>
+    <div class="hero-meta">
+      <div><span>Role</span><strong>Head of Operations</strong></div>
+      <div><span>Commitment</span><strong>30 hrs / week</strong></div>
+      <div><span>Structure</span><strong>Equity · Builds · Operating</strong></div>
+    </div>
+  </div>
+</header>
+
+<!-- THREE PARTS -->
+<section class="three">
+  <div class="wrap">
+    <div class="eyebrow">The Structure</div>
+    <div class="parts">
+      <div class="part">
+        <div class="pn">01</div>
+        <h3>Equity</h3>
+        <p>An ownership stake — my success tied to Open Club's.</p>
+      </div>
+      <div class="part">
+        <div class="pn">02</div>
+        <h3>Builds at Partner Rates</h3>
+        <p>Transparent, discounted shareholder rate for any major ground-up build.</p>
+      </div>
+      <div class="part">
+        <div class="pn">03</div>
+        <h3>Operating Agreement</h3>
+        <p>One predictable monthly figure — a dedicated team on tap + 30 hrs/week of me.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROLE -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">My Role · Head of Operations</div>
+    <div class="roles">
+      <div class="role"><span class="ri">01</span><div><h3>Operational Leadership</h3><p>Own the roadmap, drive delivery, single point of accountability.</p></div></div>
+      <div class="role"><span class="ri">02</span><div><h3>Team &amp; Talent</h3><p>Hire, manage and direct the dev team and creatives.</p></div></div>
+      <div class="role"><span class="ri">03</span><div><h3>Growth &amp; Marketing</h3><p>Execute the launch roadmap, campaigns, content and optimisation.</p></div></div>
+      <div class="role"><span class="ri">04</span><div><h3>Partnerships &amp; Revenue</h3><p>Venue pipeline and the sponsor ladder.</p></div></div>
+      <div class="role full"><span class="ri">05</span><div><h3>The Multiplier — Zorian behind me</h3><p>Not one hire. A full delivery team: development, design, content &amp; editing, and project management — at partner rates.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- OPERATING AGREEMENT -->
+<section class="op">
+  <div class="wrap">
+    <div class="eyebrow">Operating Agreement · What's Included</div>
+    <div class="incl">
+      <div class="incl-col in">
+        <h4>Covered in your monthly</h4>
+        <ul>
+          <li>New features within the existing app</li>
+          <li>Design changes, tweaks &amp; refinements</li>
+          <li>Bug fixes, optimisation &amp; performance</li>
+          <li>All marketing — campaigns, content, social</li>
+          <li>Your day-to-day ideas &amp; iterations</li>
+          <li>Project management &amp; team direction</li>
+          <li>30 hrs/week of your Head of Operations</li>
+        </ul>
+      </div>
+      <div class="incl-col out">
+        <h4>Separate partner-rate build</h4>
+        <ul>
+          <li>A whole new vertical (new sport, built ground-up)</li>
+          <li>A major new product, separate from the core app</li>
+          <li>Anything that's a brand-new engine, not an iteration</li>
+        </ul>
+      </div>
+    </div>
+    <div class="test">The test: <b>iterating what exists = included.</b> A new engine = a separate build.</div>
+  </div>
+</section>
+
+<!-- BUILD BREAKDOWN -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Builds at Partner Rates · Example Breakdown</div>
+    <div class="btable">
+      <div class="brow head"><span>Phase</span><span>What it involves</span><span>Hours</span></div>
+      <div class="brow"><span class="ph">Discovery &amp; Research</span><span class="de">Matchmaking logic, user flows, feature mapping &amp; spec</span><span class="hr">15–25</span></div>
+      <div class="brow"><span class="ph">Design &amp; UX</span><span class="de">Screens, profiles, UI, prototyping &amp; revisions</span><span class="hr">20–30</span></div>
+      <div class="brow"><span class="ph">Front-End Build</span><span class="de">Interface, responsive states, interactions</span><span class="hr">30–45</span></div>
+      <div class="brow"><span class="ph">Back-End &amp; Engine</span><span class="de">Matching, rating system, data structures, logic</span><span class="hr">30–45</span></div>
+      <div class="brow"><span class="ph">Integration</span><span class="de">Slotting into the existing app without breaking anything</span><span class="hr">15–25</span></div>
+      <div class="brow"><span class="ph">Testing &amp; QA</span><span class="de">Debugging, device testing, edge cases, fixes</span><span class="hr">12–20</span></div>
+      <div class="brow"><span class="ph">Deployment</span><span class="de">Build config, store submission, launch</span><span class="hr">6–10</span></div>
+      <div class="brow total"><span class="ph">Total scope</span><span class="de">Research → design → development → QA</span><span class="hr">128–200 hrs</span></div>
+    </div>
+    <div class="price-reveal">
+      <div class="pr scope"><div class="l">The Work</div><div class="v">128–200 hrs</div></div>
+      <div class="pr std"><div class="l">Standard Rate</div><div class="v">£6,500</div></div>
+      <div class="pr partner"><div class="l">Partner Rate</div><div class="v">£3,000</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TIERS -->
+<section class="tiers">
+  <div class="wrap">
+    <div class="eyebrow">Your Options</div>
+    <div class="tier-grid">
+      <div class="tier rec">
+        <span class="ribbon">Recommended</span>
+        <div class="tname">Full Partner</div>
+        <div class="eq">20<span>%</span></div>
+        <div class="eqd">equity</div>
+        <div class="trow"><span class="k">Build rate</span><span class="vv">50% off</span></div>
+        <div class="trow"><span class="k">Operating</span><span class="vv">£3,000/mo</span></div>
+      </div>
+      <div class="tier">
+        <div class="tname">Partner</div>
+        <div class="eq">17.5<span>%</span></div>
+        <div class="eqd">equity</div>
+        <div class="trow"><span class="k">Build rate</span><span class="vv">40% off</span></div>
+        <div class="trow"><span class="k">Operating</span><span class="vv">£4,000/mo</span></div>
+      </div>
+      <div class="tier">
+        <div class="tname">Associate</div>
+        <div class="eq">15<span>%</span></div>
+        <div class="eqd">equity</div>
+        <div class="trow"><span class="k">Build rate</span><span class="vv">30% off</span></div>
+        <div class="trow"><span class="k">Operating</span><span class="vv">£5,000/mo</span></div>
+      </div>
+    </div>
+    <div class="logic">
+      <span class="li">⇄</span>
+      <p><b>More equity = lower monthly.</b> The more you back me with ownership, the more I'm invested in the upside — so the less cash out of your pocket each month.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSE -->
+<section class="close">
+  <div class="wrap">
+    <h2>Pick the balance. Let's build it.</h2>
+    <div class="vest">
+      <strong>Equity &amp; vesting:</strong> documented and vested over an agreed period tied to continued commitment — protecting both sides.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span><b>Open Club</b> × Zorian — Partnership Proposal</span>
+    <span>Private &amp; Confidential</span>
+  </div>
+</footer>
+</body>
+</html>
