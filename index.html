@@ -109,6 +109,31 @@
   .logic p{flex:1;min-width:260px;font-size:1rem;color:rgba(244,239,228,.78)}
   .logic b{color:var(--accent)}
 
+  /* compare */
+  .compare{background:var(--ink);color:var(--paper)}
+  .compare .eyebrow{color:var(--accent)}.compare .eyebrow::before{background:var(--accent)}
+  .compare h2{color:var(--paper);font-size:clamp(1.7rem,4vw,2.6rem);font-weight:500;margin-bottom:8px}
+  .compare .sub{color:rgba(244,239,228,.62);font-size:1rem;margin-bottom:28px;max-width:60ch}
+  .ctable{border:1px solid var(--line-light);border-radius:16px;overflow:hidden}
+  .crow{display:grid;grid-template-columns:1.4fr repeat(4,1fr);align-items:stretch;border-top:1px solid var(--line-light)}
+  .crow:first-child{border-top:none}
+  .cc{padding:16px 14px;font-size:.95rem;text-align:center;display:flex;align-items:center;justify-content:center}
+  .cc.lbl{text-align:left;justify-content:flex-start;color:rgba(244,239,228,.72);font-size:.9rem}
+  .crow:not(.head) .cc:not(.lbl){font-family:'Fraunces',serif;font-weight:600;font-size:1.08rem;color:var(--paper)}
+  .crow.head{background:var(--moss)}
+  .crow.head .cc{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:rgba(244,239,228,.85)}
+  .cc.your{background:rgba(203,162,74,.10)}
+  .crow:not(.head) .cc.your{color:#e7cfa0}
+  .crow.head .cc.your{color:var(--gold)}
+  .cc.rec{background:rgba(191,242,74,.07)}
+  .crow:not(.head) .cc.rec{color:var(--accent)}
+  .crow.head .cc.rec{color:var(--accent)}
+  @media(max-width:720px){
+    .ctable{overflow-x:auto}
+    .crow{grid-template-columns:1.2fr repeat(4,minmax(72px,1fr));min-width:540px}
+    .cc{padding:13px 8px;font-size:.85rem}
+  }
+
   /* close */
   .close{background:var(--accent);color:var(--ink);text-align:center}
   .close h2{font-size:clamp(1.8rem,4.5vw,3rem);font-weight:500;max-width:20ch;margin:0 auto}
@@ -242,6 +267,7 @@
         <div class="eqd">equity</div>
         <div class="trow"><span class="k">Build rate</span><span class="vv">50% off</span></div>
         <div class="trow"><span class="k">Operating</span><span class="vv">£3,000/mo</span></div>
+        <div class="trow"><span class="k">Per year</span><span class="vv">£36,000/yr</span></div>
       </div>
       <div class="tier">
         <div class="tname">Partner</div>
@@ -249,6 +275,7 @@
         <div class="eqd">equity</div>
         <div class="trow"><span class="k">Build rate</span><span class="vv">40% off</span></div>
         <div class="trow"><span class="k">Operating</span><span class="vv">£4,000/mo</span></div>
+        <div class="trow"><span class="k">Per year</span><span class="vv">£48,000/yr</span></div>
       </div>
       <div class="tier">
         <div class="tname">Associate</div>
@@ -256,6 +283,7 @@
         <div class="eqd">equity</div>
         <div class="trow"><span class="k">Build rate</span><span class="vv">30% off</span></div>
         <div class="trow"><span class="k">Operating</span><span class="vv">£5,000/mo</span></div>
+        <div class="trow"><span class="k">Per year</span><span class="vv">£60,000/yr</span></div>
       </div>
     </div>
     <div class="logic">
@@ -265,6 +293,56 @@
     <div class="logic">
       <span class="li">✓</span>
       <p><b>Minor add-ons are on me.</b> Small tweaks and add-ons to what already exists get folded in free — partner build rates only kick in for major, ground-up builds.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSE -->
+<section class="compare">
+  <div class="wrap">
+    <div class="eyebrow">Everything, side by side</div>
+    <h2>Compare the offers.</h2>
+    <p class="sub">Your counter against all three partnership options — equity, build rate, and the real monthly and yearly cost, in one place.</p>
+    <div class="ctable">
+      <div class="crow head">
+        <div class="cc lbl"></div>
+        <div class="cc your">Your Counter</div>
+        <div class="cc rec">Full Partner</div>
+        <div class="cc">Partner</div>
+        <div class="cc">Associate</div>
+      </div>
+      <div class="crow">
+        <div class="cc lbl">Equity to Jaydon</div>
+        <div class="cc your">15%</div>
+        <div class="cc rec">25%</div>
+        <div class="cc">22.5%</div>
+        <div class="cc">20%</div>
+      </div>
+      <div class="crow">
+        <div class="cc lbl">Build rate</div>
+        <div class="cc your">100% off</div>
+        <div class="cc rec">50% off</div>
+        <div class="cc">40% off</div>
+        <div class="cc">30% off</div>
+      </div>
+      <div class="crow">
+        <div class="cc lbl">Operating · monthly</div>
+        <div class="cc your">£3,000</div>
+        <div class="cc rec">£3,000</div>
+        <div class="cc">£4,000</div>
+        <div class="cc">£5,000</div>
+      </div>
+      <div class="crow">
+        <div class="cc lbl">Operating · yearly</div>
+        <div class="cc your">£36,000</div>
+        <div class="cc rec">£36,000</div>
+        <div class="cc">£48,000</div>
+        <div class="cc">£60,000</div>
+      </div>
+    </div>
+    <div class="logic">
+      <span class="li">⇄</span>
+      <p><b>Spot the gap.</b> Every tier trades more equity for a deeper build discount. The current counter asks for the <b>lowest equity on the board</b> — and the <b>biggest discount of all</b>. That's the gap we're here to close.</p>
     </div>
   </div>
 </section>
