@@ -86,8 +86,12 @@
   .note{margin-top:22px;font-size:13.5px;color:var(--muted-2);font-style:italic;line-height:1.6;max-width:760px}
 
   /* offers: tier cards */
-  .opts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  .opt{background:linear-gradient(165deg,var(--card-2),var(--card));border:1px solid var(--line-soft);border-radius:18px;padding:28px 24px;position:relative}
+  .opts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .opt.counter{background:linear-gradient(165deg,rgba(207,159,82,.12),var(--card));border:1px solid rgba(207,159,82,.5)}
+  .opt.counter .on{color:var(--gold)}
+  .opt.counter .oe{color:var(--gold)}
+  .opt.counter .orow .v{color:#e2c089}
+  .opt{background:linear-gradient(165deg,var(--card-2),var(--card));border:1px solid var(--line-soft);border-radius:18px;padding:26px 20px;position:relative}
   .opt.rec{background:linear-gradient(165deg,var(--card-hi),var(--card));border:1.5px solid var(--lime);box-shadow:0 24px 60px -34px rgba(189,240,0,.4)}
   .opt .ribbon{position:absolute;top:0;right:20px;background:var(--lime);color:#081510;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:5px 12px;border-radius:0 0 8px 8px}
   .opt .on{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:14px}
@@ -137,6 +141,7 @@
   .ur .real{font-size:.95rem;color:var(--text);line-height:1.45}.ur .real b{color:var(--lime)}
   .verdict{margin-top:20px;background:var(--card-hi);border:1px solid var(--line);border-radius:14px;padding:24px 28px;font-family:var(--serif);font-size:clamp(1.05rem,2vw,1.35rem);font-weight:700;line-height:1.42}
   .verdict b{color:var(--lime)}.verdict .g{color:var(--gold)}
+  @media(max-width:900px){.opts{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:720px){
     .opts{grid-template-columns:1fr}
     .cmp{overflow-x:auto}.crow{grid-template-columns:1.2fr repeat(4,minmax(70px,1fr));min-width:540px}.ccell{padding:13px 8px;font-size:.85rem}
@@ -264,26 +269,15 @@
       <div class="orow"><span class="k">Operating</span><span class="v">£5,000/mo</span></div>
       <div class="orow"><span class="k">Per year</span><span class="v">£60,000/yr</span></div>
     </div>
-  </div>
-</section>
-
-<!-- COMPARE -->
-<section class="wrap">
-  <div class="sec-head">
-    <div class="left">
-      <div class="eyebrow rv">Side by side</div>
-      <h2 class="rv d1">Compare the <em>offers</em>.</h2>
-      <p class="sec-sub rv d2">Your counter against all three options — equity, build rate, and the real monthly and yearly cost, in one place.</p>
+    <div class="opt counter">
+      <div class="on">Their Offer</div>
+      <div class="oe">15<span>%</span></div>
+      <div class="oed">equity</div>
+      <div class="orow"><span class="k">Build rate</span><span class="v">100% off</span></div>
+      <div class="orow"><span class="k">Operating</span><span class="v">£3,000/mo</span></div>
+      <div class="orow"><span class="k">Per year</span><span class="v">£36,000/yr</span></div>
     </div>
   </div>
-  <div class="cmp rv d1">
-    <div class="crow h"><div class="ccell lbl"></div><div class="ccell your">Your Counter</div><div class="ccell rec">Full Partner</div><div class="ccell">Partner</div><div class="ccell">Associate</div></div>
-    <div class="crow"><div class="ccell lbl">Equity to Jaydon</div><div class="ccell your">15%</div><div class="ccell rec">25%</div><div class="ccell">22.5%</div><div class="ccell">20%</div></div>
-    <div class="crow"><div class="ccell lbl">Build rate</div><div class="ccell your">100% off</div><div class="ccell rec">50% off</div><div class="ccell">40% off</div><div class="ccell">30% off</div></div>
-    <div class="crow"><div class="ccell lbl">Operating · monthly</div><div class="ccell your">£3,000</div><div class="ccell rec">£3,000</div><div class="ccell">£4,000</div><div class="ccell">£5,000</div></div>
-    <div class="crow"><div class="ccell lbl">Operating · yearly</div><div class="ccell your">£36,000</div><div class="ccell rec">£36,000</div><div class="ccell">£48,000</div><div class="ccell">£60,000</div></div>
-  </div>
-  <p class="note rv d2">Every tier trades more equity for a deeper build discount. The current counter asks for the lowest equity on the board — and the biggest discount of all.</p>
 </section>
 
 <!-- VERBAL OFFER -->
@@ -292,7 +286,6 @@
     <div class="left">
       <div class="eyebrow rv">The offer I put to you</div>
       <h2 class="rv d1">The deal I floated <em>verbally</em>.</h2>
-      <p class="sec-sub rv d2">The example I gave you on the call — and the part the counter quietly left out.</p>
     </div>
   </div>
   <div class="vb rv d1">
@@ -303,7 +296,7 @@
     </div>
     <div class="vtr">
       <div class="veq"><span class="chip">25% equity</span><span class="s">=</span><span class="chip b">£18,000 builds, waived</span></div>
-      <p>These were never two separate gifts. The <b>25% equity is exactly what pays for waiving the £18,000 in builds</b> — it's one trade. I told you the build fees could be waived, but only <b>because</b> of the equity that covers them. The counter keeps the <span class="g">£0 build fees</span> but drops equity to <span class="g">15%</span> — that's taking the waiver without the equity that funds it.</p>
+      <p>These were never two separate gifts. The <b>25% equity is exactly what pays for waiving the £18,000 in builds</b>.</p>
     </div>
   </div>
 </section>
