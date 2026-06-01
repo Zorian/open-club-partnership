@@ -114,6 +114,27 @@
   .compare .eyebrow{color:var(--accent)}.compare .eyebrow::before{background:var(--accent)}
   .compare h2{color:var(--paper);font-size:clamp(1.7rem,4vw,2.6rem);font-weight:500;margin-bottom:8px}
 
+  /* verbal offer */
+  .voffer{background:var(--ink);color:var(--paper);padding-top:0}
+  .voffer .eyebrow{color:var(--accent)}.voffer .eyebrow::before{background:var(--accent)}
+  .voffer h2{color:var(--paper);font-size:clamp(1.7rem,4vw,2.6rem);font-weight:500;margin-bottom:8px}
+  .voffer h2 em{font-style:italic;color:var(--accent)}
+  .voffer .sub{color:rgba(244,239,228,.62);font-size:1rem;margin-bottom:26px;max-width:62ch}
+  .vbox{border:1px solid var(--accent);border-radius:18px;background:rgba(191,242,74,.05);overflow:hidden}
+  .vstats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-light)}
+  .vstat{background:var(--moss);padding:26px 20px;text-align:center}
+  .vstat .vn{font-family:'Fraunces',serif;font-size:2.3rem;font-weight:500;color:var(--accent);line-height:.9}
+  .vstat .vn span{font-size:1rem;color:rgba(244,239,228,.55)}
+  .vstat .vl{font-size:.85rem;color:rgba(244,239,228,.7);margin-top:9px;letter-spacing:.02em}
+  .vtrade{padding:26px 28px}
+  .veq{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:16px}
+  .veq .chip{font-family:'Fraunces',serif;font-weight:600;font-size:1rem;border-radius:100px;padding:9px 18px;border:1px solid var(--accent);color:var(--accent);background:rgba(191,242,74,.06)}
+  .veq .chip.b{border-color:var(--gold);color:var(--gold)}
+  .veq .sym{font-family:'Fraunces',serif;color:rgba(244,239,228,.7);font-size:1.3rem}
+  .vtrade p{font-size:1rem;color:rgba(244,239,228,.85);line-height:1.55}
+  .vtrade p b{color:var(--accent)}.vtrade p .g{color:var(--gold)}
+  @media(max-width:720px){.vstats{grid-template-columns:1fr}}
+
   /* counter unpacked */
   .unpack{background:var(--ink);color:var(--paper);padding-top:0}
   .unpack .eyebrow{color:var(--gold)}.unpack .eyebrow::before{background:var(--gold)}
@@ -367,6 +388,30 @@
     <div class="logic">
       <span class="li">⇄</span>
       <p><b>Spot the gap.</b> Every tier trades more equity for a deeper build discount. The current counter asks for the <b>lowest equity on the board</b> — and the <b>biggest discount of all</b>. That's the gap we're here to close.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VERBAL OFFER -->
+<section class="voffer">
+  <div class="wrap">
+    <div class="eyebrow">The offer I put to you</div>
+    <h2>The deal I floated <em>verbally</em>.</h2>
+    <p class="sub">The example I gave you on the call — and the part the counter quietly left out.</p>
+    <div class="vbox">
+      <div class="vstats">
+        <div class="vstat"><div class="vn">25<span>%</span></div><div class="vl">equity</div></div>
+        <div class="vstat"><div class="vn">£0</div><div class="vl">build fees — fully waived</div></div>
+        <div class="vstat"><div class="vn">£5,000<span>/mo</span></div><div class="vl">operating</div></div>
+      </div>
+      <div class="vtrade">
+        <div class="veq">
+          <span class="chip">25% equity</span>
+          <span class="sym">=</span>
+          <span class="chip b">£18,000 builds, waived</span>
+        </div>
+        <p>These were never two separate gifts. The <b>25% equity is exactly what pays for waiving the £18,000 in builds</b> — it's one trade. I told you the build fees could be waived, but only <b>because</b> of the equity that covers them. The counter keeps the <span class="g">£0 build fees</span> but drops equity to <span class="g">15%</span> — that's taking the waiver without the equity that funds it.</p>
+      </div>
     </div>
   </div>
 </section>
